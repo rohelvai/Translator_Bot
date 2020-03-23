@@ -10,6 +10,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
     data = request.args.to_dict()
+    message = ''
     if request.args.get('last clicked button name') == 'Get Started' or request.args.get('last user freeform input') == '':
         message = '/start'
     else:
